@@ -10,9 +10,7 @@ int partition(vector<int> &a, int left, int right){
   int pivot = a[left]; //pivot
   int j = left;
 
-
   for (int i = left+1; i <=right; ++i){
-
     
     if(a[i] <= pivot){ //if this element is less than the pivot, 
       j = j + 1; //make space for the less than array
@@ -38,8 +36,8 @@ void quickSort(vector<int> &a, int l, int r){
 }
 
 int get_majority_element(vector<int> &a, int left, int right) {
-  if (left == right) return -1; //only 1 element, no majority
-  if (left + 1 == right) return a[left]; //if theyre only two elements, return arbitrary one 
+  if (left == right) return -1; //no elements
+  if (left + 1 == right) return a[left]; //only one element 
 
   
   /* we want to sort first, and then we can just iterate through the numbers
@@ -66,15 +64,8 @@ int get_majority_element(vector<int> &a, int left, int right) {
 
     if(majority_test > majority_value) return 1;
   }
-
-  //std::cout<<"\n";
   return -1;
 
-
-
-
-  //write your code here
- 
 }
 
 int main() {
